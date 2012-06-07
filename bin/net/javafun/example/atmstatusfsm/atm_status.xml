@@ -1,0 +1,21 @@
+<scxml initial="idle" name="atm.connRestored" version="0.9" xmlns="http://www.w3.org/2005/07/scxml"><!--   node-size-and-position x=0.0 y=0.0 w=1050.0 h=590.0  -->
+ <state id="idle"><!--   node-size-and-position x=40.0 y=220.0 w=100.0 h=100.0  -->
+  <transition event="atm.connected" target="loading"></transition>
+ </state>
+ <state id="loading"><!--   node-size-and-position x=300.0 y=220.0 w=100.0 h=100.0  -->
+  <transition event="atm.loadSuccess" target="inService"></transition>
+  <transition event="atm.connClosed" target="disconnected"></transition>
+  <transition event="atm.loadFail" target="outOfService"></transition>
+ </state>
+ <state id="inService"><!--   node-size-and-position x=570.0 y=30.0 w=100.0 h=100.0  -->
+  <transition event="atm.shutdown" target="outOfService"><!--   edge-path [outOfService]  x=580.0 y=190.0 pointx=0.0 pointy=3.0 offsetx=-1.0 offsety=-2.0  --></transition>
+  <transition event="atm.connLost" target="disconnected"><!--   edge-path [disconnected]  x=757.0 y=270.0 pointx=0.0 pointy=-12.0 offsetx=13.0 offsety=0.0  --></transition>
+ </state>
+ <state id="outOfService"><!--   node-size-and-position x=570.0 y=260.0 w=100.0 h=100.0  -->
+  <transition event="atm.startup" target="inService"><!--   edge-path [inService]  x=660.0 y=190.0  --></transition>
+  <transition event="atm.connLost" target="disconnected"></transition>
+ </state>
+ <state id="disconnected"><!--   node-size-and-position x=570.0 y=450.0 w=100.0 h=100.0  -->
+  <transition event="atm.connRestored" target="inService"><!--   edge-path [inService]  x=860.0 y=275.0  --></transition>
+ </state>
+</scxml>
