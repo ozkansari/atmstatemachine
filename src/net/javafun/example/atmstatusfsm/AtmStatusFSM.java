@@ -26,9 +26,8 @@ public class AtmStatusFSM extends AbstractStateMachine {
 	/* ------------------------------------------------------------------------ */
 	
 	public AtmStatusFSM() {
-        super(AtmStatusFSM.class.getClassLoader().
-            getResource(SCXML_CONFIG_ATM_STATUS));
-    }
+        	super(AtmStatusFSM.class.getClassLoader().getResource(SCXML_CONFIG_ATM_STATUS));
+	}
 	
 	/* ------------------------------------------------------------------------ */
 	/* HELPER METHOD(S) */
@@ -47,22 +46,22 @@ public class AtmStatusFSM extends AbstractStateMachine {
 		Set<?> states = getEngine().getCurrentStatus().getStates();
 		State state = (State) states.iterator().next();
 		return state.getId();
-    }
+	}
 	
 	public State getCurrentState() {
 		Set<?> states = getEngine().getCurrentStatus().getStates();
 		return ( (State) states.iterator().next());
-    }
+	}
 	
 	public Collection<?> getCurrentStateEvents() {
 		return getEngine().getCurrentStatus().getEvents();
-    }
+	}
 	
 	/* ------------------------------------------------------------------------ */
 	// STATES
 	// 
 	// Each method below is the activity corresponding to a state in the
-    // SCXML document (see class constructor for pointer to the document).
+	// SCXML document (see class constructor for pointer to the document).
 	/* ------------------------------------------------------------------------ */
 	
 	 public void idle() {
