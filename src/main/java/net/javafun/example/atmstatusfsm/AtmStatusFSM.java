@@ -18,7 +18,7 @@ public class AtmStatusFSM extends AbstractStateMachine {
 	/**
 	 * State Machine uses this scmxml config file
 	 */
-	private static final String SCXML_CONFIG_ATM_STATUS = "net/javafun/example/atmfsm/atm_status.xml";
+	private static final String SCXML_CONFIG_ATM_STATUS = "atm_status.xml";
 
 
 	/* ------------------------------------------------------------------------ */
