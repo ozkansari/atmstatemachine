@@ -9,7 +9,7 @@ import org.apache.commons.scxml.model.State;
 /**
  * Atm Status Finite State Machine Example
  * 
- * @see <a href="http://commons.apache.org/scxml/index.html "> Apache Commons Scxml Library </a>
+ * @see <a href="http://commons.apache.org/scxml/index.html"> Apache Commons Scxml Library </a>
  * @author ozkans
  *
  */
